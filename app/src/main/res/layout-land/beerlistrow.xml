@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:pixlui="http://schemas.android.com/apk/com.neopixl.pixlui"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:clickable="false"
+    android:padding="5dp"
+    android:id="@+id/beerlistlandscape">
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="120dp"
+        android:layout_height="80dp"
+        android:visibility="invisible"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp" />
+
+    <ImageView
+        android:id="@+id/beerimage"
+        android:layout_width="120dp"
+        android:layout_height="80dp"
+        android:layout_marginRight="40dp"
+        android:scaleType="fitXY"
+        android:src="@android:color/black"
+        android:layout_marginLeft="20dp" />
+
+    <TextView
+        android:id="@+id/nameTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="false"
+        android:layout_toRightOf="@id/beerimage"
+        android:gravity="center_horizontal"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:text="name of beer"
+
+        android:layout_below="@+id/beertypeTxt"
+        android:textColor="@color/Yellow" />
+
+    <TextView
+        android:id="@+id/beertypeTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/nameTxt"
+        android:text="type of beer"
+        android:textSize="16sp"
+
+        android:gravity="center_horizontal|right"
+        android:layout_marginRight="20dp"
+        android:textColor="@color/Yellow"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/abvTxtlabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="false"
+        android:layout_below="@+id/nameTxt"
+        android:text="@string/column3header"
+        android:textSize="16sp"
+
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="4dp"
+        android:layout_toLeftOf="@+id/abvTxt"
+        android:textColor="@color/Yellow"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/abvTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="false"
+        android:layout_below="@+id/nameTxt"
+        android:gravity="center_horizontal"
+        android:textSize="16sp"
+
+        android:layout_marginBottom="4dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_toLeftOf="@+id/wherefromTxt"
+        android:textColor="@color/Yellow"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/wherefromTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentRight="true"
+        android:textSize="16sp"
+        android:text="where from"
+
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentBottom="false"
+        android:layout_below="@+id/nameTxt"
+
+        android:gravity="center_horizontal|right"
+        android:layout_marginBottom="4dp"
+        android:layout_marginRight="20dp"
+        android:textColor="@color/Yellow"
+        android:textStyle="bold" />
+</RelativeLayout>

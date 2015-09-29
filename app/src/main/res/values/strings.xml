@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+
+    <string-array name="numberofpeoplearray">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+
+    <string name="app_name">Stan\'s Blue Note</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+
+
+    <string name="menufragment1">Appetizers</string>
+    <string name="menufragment2">Meals</string>
+    <string name="menufragment3">Others</string>
+
+    <string name="namelabel">"Name : "</string>
+    <string name="action_settings">"action settings"</string>
+
+    <string name="timerstart">## hour(s) and ## minute(s) till last call</string>
+    <string name="timerdone">Go Home."</string>
+    <string name="textpercentsign">&#37;</string>
+    <string name="textLbl1">Total: $</string>
+    <string name="textLbl2">number of people</string>
+    <string name="textLbl3">Tip Percentage</string>
+    <string name="rdoTxt15">15%</string>
+    <string name="rdoTxt20">20%</string>
+    <string name="rdoTxtOther">Other</string>
+    <string name="btnReset">Reset</string>
+    <string name="btnCalculate">Calculate</string>
+    <string name="textLbl4">Tip:</string>
+    <string name="textLbl5">Total: </string>
+    <string name="textLbl6">per Person:</string>
+    <string name="cocktail1">Lynchburg Lemonade</string>
+    <string name="cocktail2">Blood Orange Cosmo</string>
+    <string name="cocktail3">Stan\'s Margarita</string>
+    <string name="cocktail4">Honey Badger</string>
+    <string name="cocktail5">Stan\'s Volcano</string>
+    <string name="cocktail6">Oak and Cola</string>
+    <string name="cocktail7">Eastside Connection</string>
+    <string name="cocktailchoicemade">I\'ve made my choice.</string>
+    <string name="cocktails">Cocktails</string>
+    <string name="mainpage2">Gmail</string>
+    <string name="menu">Menu</string>
+    <string name="ontap">On Tap</string>
+    <string name="ontap2">Texas on Tap</string>
+    <string name="dir">Directions</string>
+    <string name="taxi">Call Cab</string>
+    <string name="tc">Tip Calc</string>
+    <string name="tl">Time Left</string>
+    <string name="close">EXIT</string>
+    <string name="call">Call</string>
+    <string name="beerlist">Beer List</string>
+    <string name="column1header">BEER</string>
+    <string name="column2header">COUNTRY or STATE</string>
+    <string name="column3header">A.B.V</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="sortbylabel">Sort By</string>
+    <string name="namelabel2">NAME</string>
+    <string name="fromlabel">FROM</string>
+    <string name="typelabel">TYPE</string>
+    <string name="abvlabel">ABV</string>
+    <string name="countrylabel">Country</string>
+
+</resources>

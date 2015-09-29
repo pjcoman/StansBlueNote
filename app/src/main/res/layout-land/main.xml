@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:pixlui="http://schemas.android.com/apk/com.neopixl.pixlui"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_gravity="center"
+    android:background="@android:color/black"
+    android:baselineAligned="false"
+    android:orientation="vertical"
+    android:paddingTop="60dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:baselineAligned="false"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/btn_beerlist"
+            style="buttonBarStyle"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/beericon"
+            android:gravity="center_horizontal"
+            android:onClick="beerlist" />
+
+        <Button
+            android:id="@+id/shots"
+            style="buttonBarStyle"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/ctailsicon"
+            android:gravity="center_horizontal"
+            android:onClick="stanscocktails" />
+
+        <Button
+            android:id="@+id/btn_menu"
+            style="buttonBarStyle"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/buttonmenu"
+            android:gravity="center_horizontal"
+            android:onClick="stansmenu" />
+
+        <Button
+            android:id="@+id/specials"
+            style="buttonBarStyle"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/specialsicon"
+            android:gravity="center_horizontal"
+            android:onClick="specials" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/timeleft"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/timerstart"
+        android:textColor="@color/WhiteSmoke"
+        android:textSize="36sp"
+        android:textStyle="bold"
+
+        android:layout_gravity="center"
+        android:layout_weight="1" />
+
+</LinearLayout>

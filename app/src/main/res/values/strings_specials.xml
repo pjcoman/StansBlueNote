@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<resources>
+
+    <string-array name="string_specials">
+
+        <item name="1">sunday</item>
+        <item name="specials1">$4 wells, $5 calls and $6 premiums after 6pm</item>
+
+        <item name="2">monday Karaoke Night @9pm</item>
+        <item name="specials2">$3 select flavored vodka $3.5 texas draft $4 texas liquor</item>
+
+        <item name="3">tuesday 234</item>
+        <item name="specials3">$2 wells, $3 calls &amp; $4 premiums</item>
+
+        <item name="4">wednesday</item>
+        <item name="specials4">$3.5 budweiser &amp; bud light $4 fireballs after 6pm</item>
+
+        <item name="5">thursday draft beer night after 6pm</item>
+        <item name="specials5">$3 american drafts &amp; $3.75 import drafts</item>
+
+        <item name="6">friday happy hour until 8pm</item>
+        <item name="specials6">$2 bud select $6 bud select pitchers &amp; $4 wells</item>
+
+        <item name="7">saturday</item>
+        <item name="specials7">$2 bud select $6 bud select pitchers all day &amp; all night</item>
+
+    </string-array>
+
+
+</resources>

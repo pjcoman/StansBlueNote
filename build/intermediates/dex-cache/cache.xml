@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\me\workspace\StansBlueNote\app\libs\Parse-1.9.0.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="5811138d4e6cb9d45030e133ef1a61b935154c3a">
+        <dex dex="C:\Users\me\workspace\StansBlueNote\app\build\intermediates\pre-dexed\release\Parse-1.9.0-c509e7f083ae231b58189ab8448e4c3f737f8345.jar" />
+    </item>
+    <item
+        jar="C:\Users\me\workspace\StansBlueNote\app\libs\android-smart-image-view-1.0.0.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="d76ea8c3e9a60101244d6d04aff8cc75888570f0">
+        <dex dex="C:\Users\me\workspace\StansBlueNote\app\build\intermediates\pre-dexed\release\android-smart-image-view-1.0.0-5155d6dc0718fbf40de8f54c71a8f296f1d73e41.jar" />
+    </item>
+    <item
+        jar="C:\Users\me\workspace\StansBlueNote\app\build\intermediates\exploded-aar\uk.co.chrisjenx\calligraphy\2.0.2\classes.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="ddb8ff19c902eab4a3e970ed63fa6c2e2bc1e848">
+        <dex dex="C:\Users\me\workspace\StansBlueNote\app\build\intermediates\pre-dexed\release\classes-915d2f046d3c62ff81e6fd2544bcfb931cec3d68.jar" />
+    </item>
+    <item
+        jar="C:\Users\me\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-android\1.1.2\91c20388c9a45f62b5ed8fe0502bb76ff6251fc7\bolts-android-1.1.2.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="91c20388c9a45f62b5ed8fe0502bb76ff6251fc7">
+        <dex dex="C:\Users\me\workspace\StansBlueNote\app\build\intermediates\pre-dexed\release\bolts-android-1.1.2-8598e505ebbd30583065dcb47740dfad215d1baa.jar" />
+    </item>
+    <item
+        jar="C:\Users\me\workspace\StansBlueNote\app\libs\pixlui.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="11de4f81afe82f0b3c7f9b11c7539da003fb50f5">
+        <dex dex="C:\Users\me\workspace\StansBlueNote\app\build\intermediates\pre-dexed\release\pixlui-5c7991793b7df900c65b4f32bdee355df4fbbaf2.jar" />
+    </item>
+
+</items>

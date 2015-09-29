@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    xmlns:pixlui="http://schemas.android.com/apk/com.neopixl.pixlui"
+    android:stretchColumns="1"
+    android:background="@drawable/chalkboard">
+
+    <!-- Row 1: Text label placed in column zero, text field placed in column
+        two and allowed to span two columns. So a total of 4 columns in this row -->
+
+    <com.neopixl.pixlui.components.textview.TextView
+        android:id="@+id/txtLbl1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:gravity="center|right"
+        android:text="@string/textLbl1"
+        android:textColor="@color/WhiteSmoke"
+        android:textSize="22sp"
+        pixlui:typeface="chalkdust.ttf" />
+
+    <com.neopixl.pixlui.components.edittext.EditText
+        android:id="@+id/txtAmount"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="5dp"
+        android:layout_toRightOf="@id/txtLbl1"
+        android:background="@drawable/editextborder"
+        android:gravity="center_horizontal"
+        android:textColor="@color/WhiteSmoke"
+        android:textSize="22sp"
+        pixlui:typeface="chalkdust.ttf"
+        android:layout_toLeftOf="@+id/button"
+        android:inputType="numberDecimal" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="clear"
+        android:id="@+id/button"
+        android:layout_alignParentRight="true" />
+
+    <com.neopixl.pixlui.components.textview.TextView
+        android:id="@+id/txtLbl2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button"
+        android:layout_margin="5dp"
+        android:gravity="center|right"
+        android:text="@string/textLbl2"
+        android:textColor="@color/WhiteSmoke"
+        android:textSize="22sp"
+        pixlui:typeface="chalkdust.ttf" />
+
+
+
+
+    <Spinner android:layout_width="wrap_content"
+        android:layout_height="40dp" android:id="@+id/spPeople"
+        android:entries="@array/numberofpeoplearray"
+        android:spinnerMode="dropdown"
+        android:textAlignment="center"
+        android:layout_alignTop="@+id/txtLbl2"
+        android:layout_toEndOf="@+id/txtLbl2"
+        android:gravity="right"></Spinner>
+
+    <com.neopixl.pixlui.components.textview.TextView
+        android:id="@+id/txtLbl4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_gravity="right"
+        android:layout_margin="10dp"
+
+        android:background="@null"
+        android:paddingRight="10dp"
+        android:text="@string/textLbl4"
+        android:textColor="@color/WhiteSmoke"
+        android:textSize="20sp"
+        pixlui:typeface="chalkdust.ttf"
+        android:layout_below="@+id/spPeople" />
+
+    <com.neopixl.pixlui.components.edittext.EditText
+        android:id="@+id/txtTipAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_toRightOf="@id/txtLbl4"
+        android:background="@null"
+        android:gravity="left"
+        android:inputType="none"
+        android:textColor="@color/Yellow"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        pixlui:typeface="chalkdust.ttf"
+        android:layout_below="@+id/spPeople" />
+
+    <com.neopixl.pixlui.components.textview.TextView
+        android:id="@+id/txtLbl5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtLbl4"
+        android:layout_gravity="right"
+        android:layout_margin="10dp"
+        android:background="@null"
+        android:paddingRight="10dp"
+        android:text="@string/textLbl5"
+        android:textColor="@color/WhiteSmoke"
+        android:textSize="20sp"
+        pixlui:typeface="chalkdust.ttf" />
+
+    <com.neopixl.pixlui.components.edittext.EditText
+        android:id="@+id/txtTotalToPay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtTipAmount"
+        android:layout_margin="10dp"
+        android:layout_toRightOf="@id/txtLbl5"
+        android:background="@null"
+        android:gravity="left"
+        android:inputType="none"
+        android:textColor="@color/Wheat"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        pixlui:typeface="chalkdust.ttf" />
+
+    <com.neopixl.pixlui.components.textview.TextView
+        android:id="@+id/txtLbl6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtLbl5"
+        android:layout_gravity="right"
+        android:layout_margin="10dp"
+        android:background="@null"
+        android:paddingRight="10dp"
+        android:text="@string/textLbl6"
+        android:textColor="@color/WhiteSmoke"
+        android:textSize="20sp"
+        pixlui:typeface="chalkdust.ttf" />
+
+    <com.neopixl.pixlui.components.edittext.EditText
+        android:id="@+id/txtTipPerPerson"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtTotalToPay"
+        android:layout_margin="10dp"
+        android:layout_toRightOf="@id/txtLbl6"
+        android:background="@null"
+        android:gravity="right"
+        android:inputType="none"
+        android:textColor="@color/LightGreen"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        pixlui:typeface="chalkdust.ttf" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="15%"
+        android:id="@+id/tipAmount"
+        android:layout_below="@+id/txtLbl6"
+        android:layout_centerHorizontal="true"
+        android:textSize="32sp" />
+
+    <SeekBar
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekBar"
+        android:max="100"
+        android:progress="15"
+
+        android:layout_below="@+id/tipAmount"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp" />
+
+
+</RelativeLayout>

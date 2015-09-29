@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/beersort"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/stansbackground"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/sortbylabel"
+        android:id="@+id/textView5"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentLeft="false"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/Yellow"
+        android:background="@color/Black"
+        android:gravity="center_horizontal" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:id="@+id/header"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/textView5"
+        android:background="@color/Black">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:clickable="true"
+        android:text="@string/namelabel2"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="20dp"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="false"
+        android:layout_below="@+id/textView5"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_gravity="center" />
+
+    <ImageView
+        android:layout_width="20dp"
+
+        android:layout_height="20dp"
+        android:id="@+id/imageView"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentLeft="false"
+        android:layout_toRightOf="@+id/textView"
+        android:layout_below="@+id/textView5"
+        android:layout_alignParentRight="false"
+        android:src="@drawable/arrowup"
+        android:visibility="invisible"
+        android:layout_gravity="center" />
+
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:clickable="true"
+        android:gravity="center_vertical"
+        android:singleLine="false"
+        android:text="@string/fromlabel"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="20dp"
+        android:layout_alignParentTop="false"
+        android:layout_below="@+id/textView5"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_toRightOf="@+id/imageView"
+        android:layout_gravity="center" />
+
+    <ImageView
+        android:layout_width="20dp"
+
+        android:layout_height="20dp"
+        android:id="@+id/imageView2"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentLeft="false"
+        android:layout_below="@+id/textView5"
+        android:layout_alignParentRight="false"
+        android:layout_toRightOf="@+id/textView2"
+        android:src="@drawable/arrowup"
+        android:visibility="invisible"
+        android:layout_gravity="center" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:clickable="true"
+        android:text="@string/typelabel"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="20dp"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentStart="false"
+        android:layout_below="@+id/textView5"
+        android:layout_alignParentRight="false"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_toRightOf="@+id/imageView2"
+        android:layout_alignParentLeft="false"
+        android:layout_gravity="center" />
+
+    <ImageView
+        android:layout_width="20dp"
+
+        android:layout_height="20dp"
+        android:id="@+id/imageView3"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentLeft="false"
+        android:layout_below="@+id/textView5"
+        android:layout_alignParentRight="false"
+        android:src="@drawable/arrowup"
+        android:visibility="invisible"
+        android:layout_toRightOf="@+id/textView3"
+        android:layout_gravity="center" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:clickable="true"
+        android:gravity="center_vertical"
+        android:text="@string/abvlabel"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="20dp"
+        android:layout_alignParentTop="false"
+        android:layout_below="@+id/textView5"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_toRightOf="@+id/imageView3"
+        android:layout_gravity="center" />
+
+    <ImageView
+        android:layout_width="20dp"
+
+        android:layout_height="20dp"
+        android:id="@+id/imageView4"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentLeft="false"
+        android:layout_below="@+id/textView5"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentRight="false"
+        android:src="@drawable/arrowup"
+        android:visibility="invisible"
+        android:layout_toRightOf="@+id/textView4"
+        android:layout_gravity="center" />
+
+    </LinearLayout>
+
+
+    <ListView
+        android:id="@+id/beerlist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/header"
+        android:background="@android:color/transparent"
+        android:divider="@color/Yellow"
+        android:dividerHeight="1dp" />
+
+
+</RelativeLayout>
+
+
+
+
+
