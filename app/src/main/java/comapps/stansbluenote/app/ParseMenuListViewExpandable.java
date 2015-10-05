@@ -1,31 +1,24 @@
 package comapps.stansbluenote.app;
 
-import android.app.ActionBar;
-import android.app.Activity;
 import android.content.ComponentName;
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.ExpandableListView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
-import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
-
 /**
  * Created by me on 6/2/2015.
  */
-public class ParseMenuListViewExpandable extends Activity {
+public class ParseMenuListViewExpandable extends AppCompatActivity {
     // Declare Variables
 
 
@@ -44,68 +37,22 @@ public class ParseMenuListViewExpandable extends Activity {
         super.onCreate(savedInstanceState);
         // Get the view from listview_main.xml
 
-        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
-                .setDefaultFontPath("fonts/Marker Felt.ttf")
-                .setFontAttrId(R.attr.fontPath)
-                .build());
 
         setContentView(R.layout.menulist_expandable);
 
-
-
-
-
-
-
-
-
-
-
-            Menu_Category = MenuDataProvider.getInfoLocal();
+        Menu_Category = MenuDataProvider.getInfoLocal();
 
 
 
 
         Exp_list = (ExpandableListView) findViewById(R.id.exp_list);
 
-        Menu_list = new ArrayList<String>(Menu_Category.keySet());
+        Menu_list = new ArrayList<>(Menu_Category.keySet());
         adapter = new ParseMenuListViewExpandableAdapter(this, Menu_Category, Menu_list);
         Exp_list.setAdapter(adapter);
 
-
-
-
-
-
-
-
-
-
-
-
-        ActionBar bar = getActionBar();
-        if (bar != null) {
-            //       bar.setBackgroundDrawable(new ColorDrawable(R.color.Black));
-            bar.setBackgroundDrawable(getResources().getDrawable(R.color.Black));
-        }
-
-
-
-
-
         Typeface tf = Typeface.createFromAsset(getAssets(),
                 "fonts/chalkdust.ttf");
-
-        int titleId = getResources().getIdentifier("action_bar_title", "id",
-                "android");
-        TextView actionbartitle = (TextView) findViewById(titleId);
-
-
-
-        actionbartitle.setTextSize(18);
-        actionbartitle.setTextColor(Color.rgb(94, 139, 246));
-
-
 
     }
 
@@ -181,18 +128,6 @@ public class ParseMenuListViewExpandable extends Activity {
 
 
     }
-
-    @Override
-    protected void attachBaseContext(Context newBase) {
-
-        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
-
-    }
-
-
-
-
-
 
 
 

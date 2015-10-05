@@ -37,7 +37,7 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 import static comapps.stansbluenote.app.R.drawable.arrowdown;
 import static comapps.stansbluenote.app.R.drawable.arrowup;
 
-public class BeerParseListView extends Activity  {
+public class BeerParseListView extends Activity {
     // Declare Variables
     ListView listview;
     List<ParseObject> ob;
@@ -59,7 +59,7 @@ public class BeerParseListView extends Activity  {
                 .setFontAttrId(R.attr.fontPath)
                 .build());
         // Get the view from listview_main.xml
-        setContentView(R.layout.beerlist);
+
 
         // Action Bar
 
@@ -83,7 +83,6 @@ public class BeerParseListView extends Activity  {
 
 
         byname.setTextColor(Color.YELLOW);
-
 
 
         final ImageView arrow = (ImageView) findViewById(R.id.imageView);
@@ -135,7 +134,6 @@ public class BeerParseListView extends Activity  {
                     arrow.setImageResource(arrowdown);
 
 
-
                 }
 
                 arrow.setVisibility(View.VISIBLE);
@@ -147,8 +145,6 @@ public class BeerParseListView extends Activity  {
                 bycountry.setTextColor(0xff5e8bf6);
                 bytype.setTextColor(0xff5e8bf6);
                 byabv.setTextColor(0xff5e8bf6);
-
-
 
 
                 adapter.notifyDataSetChanged();
@@ -190,16 +186,13 @@ public class BeerParseListView extends Activity  {
                     arrow2.setImageResource(arrowup);
 
 
-
                 }
-
 
 
                 arrow.setVisibility(View.INVISIBLE);
                 arrow2.setVisibility(View.VISIBLE);
                 arrow3.setVisibility(View.INVISIBLE);
                 arrow4.setVisibility(View.INVISIBLE);
-
 
 
                 byname.setTextColor(0xff5e8bf6);
@@ -211,7 +204,6 @@ public class BeerParseListView extends Activity  {
                 adapter.notifyDataSetChanged();
 
             }
-
 
 
         });
@@ -247,16 +239,13 @@ public class BeerParseListView extends Activity  {
                     arrow3.setImageResource(arrowup);
 
 
-
                 }
-
 
 
                 arrow.setVisibility(View.INVISIBLE);
                 arrow2.setVisibility(View.INVISIBLE);
                 arrow3.setVisibility(View.VISIBLE);
                 arrow4.setVisibility(View.INVISIBLE);
-
 
 
                 byname.setTextColor(0xff5e8bf6);
@@ -268,11 +257,6 @@ public class BeerParseListView extends Activity  {
 
             }
         });
-
-
-
-
-
 
 
         byabv.setOnClickListener(new View.OnClickListener() {
@@ -305,7 +289,6 @@ public class BeerParseListView extends Activity  {
                     arrow4.setImageResource(arrowup);
 
 
-
                 }
 
 
@@ -313,7 +296,6 @@ public class BeerParseListView extends Activity  {
                 arrow2.setVisibility(View.INVISIBLE);
                 arrow3.setVisibility(View.INVISIBLE);
                 arrow4.setVisibility(View.VISIBLE);
-
 
 
                 byname.setTextColor(0xff5e8bf6);
@@ -327,27 +309,19 @@ public class BeerParseListView extends Activity  {
         });
 
 
-
         SharedPreferences prefs1 = this.getSharedPreferences(
                 "com.stansbluenote.app", Context.MODE_PRIVATE);
         boolean hasVisited1 = prefs1.getBoolean("HAS_VISISTED_BEFORE1", false);
-        if(!hasVisited1) {
-
+        if (!hasVisited1) {
 
 
             prefs1.edit().putBoolean("HAS_VISISTED_BEFORE1", true).commit();
 
             new RemoteDataTask().execute();
 
-        } else {
-
-
-            new RemoteDataTask2().execute();
-
         }
+
     }
-
-
 
 
     // Action Bar
@@ -359,8 +333,6 @@ public class BeerParseListView extends Activity  {
         inflater.inflate(R.menu.activity_main_actions, menu);
 
         return super.onCreateOptionsMenu(menu);
-
-
 
 
     }
@@ -390,7 +362,9 @@ public class BeerParseListView extends Activity  {
 
         Intent intent5 = new Intent(
                 Intent.ACTION_VIEW,
-                Uri.parse("https://www.google.com/maps/place/Stan's+Blue+Note/@32.824255,-96.769911,17z/data=!3m1!4b1!4m2!3m1!1s0x864e9f40bd0b9551:0x3c0fa6a555470cde?hl=en"));
+                Uri.parse("https://www.google.com/maps/place/Stan's+Blue+Note/" +
+                        "@32.824255,-96.769911,17z/data=!3m1!4b1!4m2!3m1!1s0x864e9" +
+                        "f40bd0b9551:0x3c0fa6a555470cde?hl=en"));
         intent5.setComponent(new ComponentName("com.google.android.apps.maps",
                 "com.google.android.maps.MapsActivity"));
         startActivity(intent5);
@@ -415,7 +389,6 @@ public class BeerParseListView extends Activity  {
     }
 
 
-
     private void CallStans() {
 
         // TODO Auto-generated method stub
@@ -431,124 +404,12 @@ public class BeerParseListView extends Activity  {
     // Action Bar end
 
 
-
-
-
     // RemoteDataTask AsyncTask
     private class RemoteDataTask extends AsyncTask<Void, Void, Void> {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            // Create a progressdialog
-            mProgressDialog = new ProgressDialog(BeerParseListView.this);
-            // Set progressdialog title
-            mProgressDialog.setTitle("Stan's Beers on Tap");
-            // Set progressdialog message
-            mProgressDialog.setMessage("Loading...");
-            mProgressDialog.setIndeterminate(false);
-            // Show progressdialog
-            mProgressDialog.show();
-        }
 
-        @Override
-        protected Void doInBackground(Void... params) {
-
-            beerlist = new ArrayList<BeerListObject>();
-
-            try {
-                // Locate the class table named "stansbeers" in Parse.com
-                ParseQuery<ParseObject> query = new ParseQuery<ParseObject>(
-                        "stansbeers");
-                // Locate the column named "name" in Parse.com and order list
-                // by ascending
-
-
-                query.orderByAscending("name");
-
-                ob = query.find();
-
-                ParseObject.pinAllInBackground(ob);
-
-                for (ParseObject stansbeers : ob) {
-                    // Locate images in flag column
-
-                    ParseFile image = (ParseFile) stansbeers.get("image");
-
-                    BeerListObject beer = new BeerListObject();
-                    beer.setBeerName((String) stansbeers.get("name"));
-                    beer.setBeerWhereFrom((String) stansbeers.get("wherefrom"));
-                    beer.setBeerAbv((String) stansbeers.get("abv"));
-                    beer.setBeerType((String) stansbeers.get("type"));
-                    beer.setBeerImage(image.getUrl());
-                    beerlist.add(beer);
-                }
-            } catch (ParseException e) {
-                Log.e("Error", e.getMessage());
-                e.printStackTrace();
-            }
-            return null;
-        }
-
-
-        @Override
-        protected void onPostExecute(Void result) {
-            // Locate the listview in listview_main.xml
-            listview = (ListView) findViewById(R.id.beerlist);
-            // Pass the results into ParseListViewAdapter.java
-            adapter = new BeerParseListViewAdapter(BeerParseListView.this,
-                    beerlist);
-
-
-            // Binds the Adapter to the ListView
-            listview.setAdapter(adapter);
-            // Close the progressdialog
-            mProgressDialog.dismiss();
-            // Capture button clicks on ListView items
-           
-    /*        
-            listview.setOnItemClickListener(new OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view,
-                        int position, long id) {
-                    // Send single item click data to SingleItemView Class
-                    Intent i = new Intent(ParseListView.this,
-                            SingleItemView.class);
-                    // Pass data "name" followed by the position
-                    i.putExtra("name", ob.get(position).getString("name")
-                            .toString());
-                    // Open SingleItemView.java Activity
-                    startActivity(i);
-                }
-            });
-      
-        */
-
-
-        }
-    }
-
-
-
-
-    // RemoteDataTask AsyncTask
-    private class RemoteDataTask2 extends AsyncTask<Void, Void, Void> {
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-            // Create a progressdialog
-            mProgressDialog = new ProgressDialog(BeerParseListView.this);
-            // Set progressdialog title
-            mProgressDialog.setTitle("Stan's Beers on Tap");
-            // Set progressdialog message
-            mProgressDialog.setMessage("Loading...");
-            mProgressDialog.setIndeterminate(false);
-            // Show progressdialog
-            mProgressDialog.show();
-
-            // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-
-
-            // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
         }
 
         @Override
@@ -596,45 +457,19 @@ public class BeerParseListView extends Activity  {
             // Locate the listview in listview_main.xml
             listview = (ListView) findViewById(R.id.beerlist);
             // Pass the results into ParseListViewAdapter.java
-            adapter = new BeerParseListViewAdapter(BeerParseListView.this,
-                    beerlist);
-
-
-            // Binds the Adapter to the ListView
+            adapter = new BeerParseListViewAdapter(BeerParseListView.this, beerlist);
             listview.setAdapter(adapter);
             // Close the progressdialog
-            mProgressDialog.dismiss();
-            // Capture button clicks on ListView items
-
-    /*
-            listview.setOnItemClickListener(new OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view,
-                        int position, long id) {
-                    // Send single item click data to SingleItemView Class
-                    Intent i = new Intent(ParseListView.this,
-                            SingleItemView.class);
-                    // Pass data "name" followed by the position
-                    i.putExtra("name", ob.get(position).getString("name")
-                            .toString());
-                    // Open SingleItemView.java Activity
-                    startActivity(i);
-                }
-            });
-
-        */
-
 
         }
     }
 
-    @Override
-    protected void attachBaseContext(Context newBase) {
+        @Override
+        protected void attachBaseContext(Context newBase) {
+            super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
 
-        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+        }
+
 
     }
 
-
-
-}

@@ -35,6 +35,7 @@ public class BeerParseListViewAdapter extends BaseAdapter {
 
     }
 
+
     public class ViewHolder {
         TextView beername;
         TextView beerwherefrom;
@@ -67,9 +68,6 @@ public class BeerParseListViewAdapter extends BaseAdapter {
             view = inflater.inflate(R.layout.beerlistrow, null);
 
 
-            // Locate the TextViews in listview_item.xml
-
-
             holder.beername = (TextView) view.findViewById(R.id.nameTxt);
 
 
@@ -98,38 +96,8 @@ public class BeerParseListViewAdapter extends BaseAdapter {
         // Set the results into ImageView
         imageLoader.DisplayImage(beerlist.get(position).getBeerImage(),
                 holder.beerimage);
-        
-        
-        
-       
-       /* 
-        
-        
-      	// Listen for ListView Item Click
-        view.setOnClickListener(new OnClickListener() {
- 
-            @Override
-            public void onClick(View arg0) {
-                // Send single item click data to SingleItemView Class
-                Intent intent = new Intent(context, SingleItemView.class);
-                // Pass all data rank
-                intent.putExtra("name",
-                        (beerlist.get(position).getBeerName()));
-                // Pass all data country
-                intent.putExtra("wherefrom",
-                        (beerlist.get(position).getBeerWhereFrom()));
-                // Pass all data population
-                intent.putExtra("abv",
-                        (beerlist.get(position).getBeerAbv()));
-                // Pass all data flag
-                intent.putExtra("image",
-                        (beerlist.get(position).getBeerImage()));
-                // Start SingleItemView Class
-                context.startActivity(intent);
-            }
-        });
-        
-        */
+
+
         return view;
 
 

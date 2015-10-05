@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CustomActionBarTheme"
+           parent="@style/Theme.AppCompat.NoActionBar">
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+        <item name="android:colorPrimary">@color/holo_light_primary</item>
+        <item name="android:colorPrimaryDark">@android:color/white</item>
+        <item name="android:colorBackground">@color/background_holo_light</item>
+
+
+    </style>
+</resources>

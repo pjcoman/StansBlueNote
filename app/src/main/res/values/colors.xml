@@ -145,5 +145,10 @@
     <color name="DarkBlue">#00008B</color>
     <color name="Navy">#000080</color>
     <color name="Black">#000000</color>
+    <color name="holo_light_primary">#3f51b5</color>
+    <color name="background_holo_light">#f3f3f3</color>
+    <color name="bright_foreground_disabled_holo_light">#e13b3b</color>
+    <color name="primary_material_dark">#3f51b5</color>
+    <color name="primary_text_default_material_dark">#ffffff</color>
 
 </resources>

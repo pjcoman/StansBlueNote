@@ -47,7 +47,7 @@
         android:allowBackup="true"
         android:icon="@drawable/bluenoteicon"
         android:label="Stan\'s Blue Note"
-        android:theme="@style/Widget.ActionBar">
+        android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -57,19 +57,24 @@
         </activity>
 
 
+        <activity
+            android:name=".MainActivityViewPager"
+            android:screenOrientation="unspecified"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
 
-
+            />
 
         <activity
-            android:name=".BeerParseListView"
+            android:name=".BeerListViewActivity"
             android:screenOrientation="unspecified"
-            android:theme="@style/Widget.ActionBar" />
+
+            />
 
 
         <activity
             android:name=".ParseMenuListViewExpandable"
             android:screenOrientation="unspecified"
-            android:theme="@style/Widget.ActionBar" />
+            />
 
 
         <activity
@@ -77,9 +82,9 @@
             android:screenOrientation="unspecified" />
 
         <activity
-            android:name=".ParseSpecialsListView"
+            android:name=".SpecialsListViewActivity"
             android:screenOrientation="unspecified"
-            android:theme="@style/Widget.ActionBar"
+
 
              />
 
@@ -91,29 +96,16 @@
 
 
         <activity
-            android:name=".CocktailParseListView"
+            android:name=".CocktailListViewActivity"
             android:screenOrientation="unspecified"
-            android:theme="@style/Widget.ActionBar" />
+            />
 
         <activity
-            android:name=".StaffParseListView"
+            android:name=".StaffListViewActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Widget.ActionBar" />
+            />
 
 
-
-
-
-
-        <activity
-            android:name=".Tipster"
-            android:screenOrientation="unspecified"
-            android:theme="@style/Widget.ActionBar" />
-
-        <activity
-            android:name=".TipsterWithSlider"
-            android:screenOrientation="portrait"
-            android:theme="@style/Widget.ActionBar" />
 
         <service android:name="com.parse.PushService" />
         <receiver android:name="com.parse.ParseBroadcastReceiver">

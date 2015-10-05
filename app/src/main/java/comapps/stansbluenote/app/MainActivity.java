@@ -1,13 +1,11 @@
 package comapps.stansbluenote.app;
 
-import android.app.ActionBar;
-import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -21,18 +19,12 @@ import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-
-     //   Parse.initialize(this, "ou48PJFcg03zAiknM61FqTj7x9cTRIWmBtqKTIqU", "nIRAnkLq87H9hm5Iamc3kxmOWACf4O7P3YvuewKi");
-
-
-     //   PushService.setDefaultPushCallback(this, MainActivity.class);
-     //   ParseInstallation.getCurrentInstallation().saveInBackground();
 
         super.onCreate(savedInstanceState);
 
@@ -41,15 +33,14 @@ public class MainActivity extends Activity {
                 .setFontAttrId(R.attr.fontPath)
                 .build());
 
-        // requestWindowFeature(Window.FEATURE_ACTION_BAR_OVERLAY);
+
+        setContentView(R.layout.main);
 
 
-        setContentView(R.layout.main2);
 
-        ActionBar bar = getActionBar();
-        if (bar != null) {
+    /*    if (bar != null) {
      //       bar.setBackgroundDrawable(new ColorDrawable(R.color.Black));
-            bar.setBackgroundDrawable(getResources().getDrawable(R.color.Black));
+            bar.setIcon(R.drawable.ic_launcher);
         }
 
 
@@ -62,10 +53,10 @@ public class MainActivity extends Activity {
         actionbartitle.setTextSize(18);
         actionbartitle.setTextColor(Color.rgb(94, 139, 246));
 
-        //  ActionBar actionbar = getActionBar();
+          ActionBar actionbar = getActionBar();
 
-        //   actionbar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#615F5F")));
-        //   actionbar.setBackgroundDrawable(getResources().getDrawable(null);
+           actionbar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#615F5F"))); */
+
 
 
         Calendar calendar = Calendar.getInstance();
@@ -120,13 +111,13 @@ public class MainActivity extends Activity {
         }
 
 
-       if (savedInstanceState == null) {
+        //     if (savedInstanceState == null) {
 
-            Intent intentspecials = new Intent(this, ParseSpecialsListViewPopUp.class);
-            startActivity(intentspecials);
+        //          Intent intentspecials = new Intent(this, ParseSpecialsListViewPopUp.class);
+        //          startActivity(intentspecials);
 
 
-        }
+        //      }
 
 
 
@@ -213,53 +204,40 @@ public class MainActivity extends Activity {
 
 
     public void beerlist(View v) {
-        Intent intent9 = new Intent();
-        intent9.setClass(this, BeerParseListView.class);
-        startActivity(intent9);
-    }
 
-
-
-
-
-
-    public void tipcalc(View v) {
-        Intent intent4 = new Intent();
-        intent4.setClass(this, TipsterWithSlider.class);
-        startActivity(intent4);
+        Intent intentBeer = new Intent();
+        intentBeer.setClass(this, MainActivityViewPager.class);
+        intentBeer.putExtra("activityId", "beer");
+        startActivity(intentBeer);
     }
 
 
     public void specials(View v) {
-        Intent intent6 = new Intent();
-        intent6.setClass(this, ParseSpecialsListView.class);
-        startActivity(intent6);
+        Intent intentSpecials = new Intent();
+        intentSpecials.setClass(this, MainActivityViewPager.class);
+        intentSpecials.putExtra("activityId", "specials");
+        startActivity(intentSpecials);
     }
 
     public void stansmenu(View v) {
-        Intent intent7 = new Intent();
-        //	intent7.setClass(this, MenuFragments.class);
-        intent7.setClass(this, ParseMenuListViewExpandable.class);
-        startActivity(intent7);
+        Intent intentMenu = new Intent();
+        intentMenu.setClass(this, MainActivityViewPager.class);
+        intentMenu.putExtra("activityId", "food");
+        startActivity(intentMenu);
     }
 
     public void stanscocktails(View v) {
-        Intent intent8 = new Intent();
-
-        intent8.setClass(this, CocktailParseListView.class);
-        startActivity(intent8);
+        Intent intentCocktails = new Intent();
+        intentCocktails.setClass(this, MainActivityViewPager.class);
+        intentCocktails.putExtra("activityId", "cocktails");
+        startActivity(intentCocktails);
     }
 
     public void stansstaff(View v) {
-        Intent intent9 = new Intent();
-        intent9.setClass(this, StaffParseListView.class);
-        startActivity(intent9);
-    }
-
-    public void callcab(View v) {
-        Intent callIntent = new Intent(Intent.ACTION_VIEW);
-        callIntent.setData(Uri.parse("tel:2144266262"));
-        startActivity(callIntent);
+        Intent intentStaff = new Intent();
+        intentStaff.setClass(this, MainActivityViewPager.class);
+        intentStaff.putExtra("activityId", "staff");
+        startActivity(intentStaff);
     }
 
     @Override
@@ -268,8 +246,6 @@ public class MainActivity extends Activity {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
 
     }
-
-
 
 
     @Override

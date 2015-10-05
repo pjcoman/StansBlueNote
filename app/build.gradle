@@ -8,14 +8,14 @@ android {
             storePassword 'm060789'
         }
     }
-    compileSdkVersion 19
+    compileSdkVersion 23
     buildToolsVersion "19.1.0"
     defaultConfig {
 
         minSdkVersion 14
         targetSdkVersion 21
-        versionCode 124
-        versionName "12.4"
+        versionCode 127
+        versionName "12.7"
     }
     buildTypes {
         release {
@@ -29,10 +29,10 @@ android {
         compile 'com.parse.bolts:bolts-android:1.1.2'
         compile fileTree(dir: 'libs', include: 'Parse-*.jar')
         compile 'uk.co.chrisjenx:calligraphy:2.0.2'
+        compile 'com.squareup.picasso:picasso:2.5.2'
+        compile 'com.android.support:design:23.0.0'
 
 
     }
 }
 
-dependencies {
-}

@@ -81,11 +81,6 @@ public class ParseSpecialsListView extends Activity {
 
             new RemoteDataTask().execute();
 
-        } else {
-
-
-            new RemoteDataTask2().execute();
-
         }
     }
 
@@ -235,98 +230,7 @@ public class ParseSpecialsListView extends Activity {
         }
     }
 
-    // RemoteDataTask AsyncTask
-    private class RemoteDataTask2 extends AsyncTask<Void, Void, Void> {
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-            // Create a progressdialog
-            mProgressDialog = new ProgressDialog(ParseSpecialsListView.this);
-            // Set progressdialog title
-            mProgressDialog.setTitle("Stan's Specials");
-            // Set progressdialog message
-            mProgressDialog.setMessage("Loading...");
-            mProgressDialog.setIndeterminate(false);
-            // Show progressdialog
-            mProgressDialog.show();
 
-
-
-            // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-
-
-            // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-        }
-
-
-
-
-
-        @Override
-        protected Void doInBackground(Void... params) {
-
-
-
-            specialslist = new ArrayList<SpecialsListObject>();
-
-            try {
-                // Locate the class table named "stansdata" in Parse.com
-                ParseQuery<ParseObject> query = new ParseQuery<ParseObject>(
-                        "specials").fromLocalDatastore();
-                // Locate the column named "day" in Parse.com and order list
-                // by ascending
-
-
-
-
-                query.orderByAscending("x");
-
-
-
-                ob = query.find();
-
-                ParseObject.pinAllInBackground(ob);
-
-                for (ParseObject specials : ob) {
-                    // Locate images in flag column
-
-
-                    SpecialsListObject dayandspecial = new SpecialsListObject();
-                    dayandspecial.setDay((String) specials.get("dayofweek"));
-                    dayandspecial.setSpecial((String) specials.get("data"));
-
-                    specialslist.add(dayandspecial);
-                }
-            } catch (ParseException e) {
-                Log.e("Error", e.getMessage());
-                e.printStackTrace();
-            }
-            return null;
-        }
-
-
-
-
-        @Override
-        protected void onPostExecute(Void result) {
-            // Locate the listview in listview_main.xml
-            listview = (ListView) findViewById(R.id.specialslist);
-            // Pass the results into ParseListViewAdapter.java
-            adapter = new ParseSpecialsListViewAdapter(ParseSpecialsListView.this,
-                    specialslist);
-
-
-            // Binds the Adapter to the ListView
-            listview.setAdapter(adapter);
-            // Close the progressdialog
-            mProgressDialog.dismiss();
-            // Capture button clicks on ListView items
-
-
-
-
-        }
-    }
 
     @Override
     protected void attachBaseContext(Context newBase) {

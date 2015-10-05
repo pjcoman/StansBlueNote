@@ -6,35 +6,84 @@
         jumboMode="false"
         revision="19.1.0"
         sha1="5811138d4e6cb9d45030e133ef1a61b935154c3a">
-        <dex dex="C:\Users\me\workspace\StansBlueNote\app\build\intermediates\pre-dexed\release\Parse-1.9.0-c509e7f083ae231b58189ab8448e4c3f737f8345.jar" />
+        <dex dex="C:\Users\me\workspace\StansBlueNote\app\build\intermediates\pre-dexed\debug\Parse-1.9.0-c509e7f083ae231b58189ab8448e4c3f737f8345.jar" />
     </item>
     <item
         jar="C:\Users\me\workspace\StansBlueNote\app\libs\android-smart-image-view-1.0.0.jar"
         jumboMode="false"
         revision="19.1.0"
         sha1="d76ea8c3e9a60101244d6d04aff8cc75888570f0">
-        <dex dex="C:\Users\me\workspace\StansBlueNote\app\build\intermediates\pre-dexed\release\android-smart-image-view-1.0.0-5155d6dc0718fbf40de8f54c71a8f296f1d73e41.jar" />
+        <dex dex="C:\Users\me\workspace\StansBlueNote\app\build\intermediates\pre-dexed\debug\android-smart-image-view-1.0.0-5155d6dc0718fbf40de8f54c71a8f296f1d73e41.jar" />
+    </item>
+    <item
+        jar="C:\Users\me\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.0\support-annotations-23.0.0.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="990e7f98a7bad86a40b1f0bcfeb039023afd0839">
+        <dex dex="C:\Users\me\workspace\StansBlueNote\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.0-546a15c4d46410e2ed7f9f4be25a40db270ebf29.jar" />
     </item>
     <item
         jar="C:\Users\me\workspace\StansBlueNote\app\build\intermediates\exploded-aar\uk.co.chrisjenx\calligraphy\2.0.2\classes.jar"
         jumboMode="false"
         revision="19.1.0"
         sha1="ddb8ff19c902eab4a3e970ed63fa6c2e2bc1e848">
-        <dex dex="C:\Users\me\workspace\StansBlueNote\app\build\intermediates\pre-dexed\release\classes-915d2f046d3c62ff81e6fd2544bcfb931cec3d68.jar" />
+        <dex dex="C:\Users\me\workspace\StansBlueNote\app\build\intermediates\pre-dexed\debug\classes-915d2f046d3c62ff81e6fd2544bcfb931cec3d68.jar" />
+    </item>
+    <item
+        jar="C:\Users\me\workspace\StansBlueNote\app\build\intermediates\exploded-aar\com.jpardogo.materialtabstrip\library\1.1.0\classes.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="611c7708cd3df0d7ae99105d4df5af8eb25c4b32">
+        <dex dex="C:\Users\me\workspace\StansBlueNote\app\build\intermediates\pre-dexed\debug\classes-a1107c3594e1121f3d3b3c9b5fa6c1645fd47065.jar" />
+    </item>
+    <item
+        jar="C:\Users\me\workspace\StansBlueNote\app\build\intermediates\exploded-aar\com.android.support\design\23.0.0\classes.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="8a5238e4bdcd6568b82db669d41817de670586b8">
+        <dex dex="C:\Users\me\workspace\StansBlueNote\app\build\intermediates\pre-dexed\debug\classes-3711f4fb03e1af27100a3dd147c3e2fe1d080270.jar" />
+    </item>
+    <item
+        jar="C:\Users\me\workspace\StansBlueNote\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\classes.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="8413c27b45b7fe61dca4a98159f65e2cee215f5a">
+        <dex dex="C:\Users\me\workspace\StansBlueNote\app\build\intermediates\pre-dexed\debug\classes-01ffc9096d42b3cbdd66f4cff775df95f6e55bee.jar" />
+    </item>
+    <item
+        jar="C:\Users\me\workspace\StansBlueNote\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\libs\internal_impl-23.0.0.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="8bd336eeae661e8311330284897ee07f8ebaa297">
+        <dex dex="C:\Users\me\workspace\StansBlueNote\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.0-f1c7682475aadf9cdb215296463404374144fbed.jar" />
     </item>
     <item
         jar="C:\Users\me\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-android\1.1.2\91c20388c9a45f62b5ed8fe0502bb76ff6251fc7\bolts-android-1.1.2.jar"
         jumboMode="false"
         revision="19.1.0"
         sha1="91c20388c9a45f62b5ed8fe0502bb76ff6251fc7">
-        <dex dex="C:\Users\me\workspace\StansBlueNote\app\build\intermediates\pre-dexed\release\bolts-android-1.1.2-8598e505ebbd30583065dcb47740dfad215d1baa.jar" />
+        <dex dex="C:\Users\me\workspace\StansBlueNote\app\build\intermediates\pre-dexed\debug\bolts-android-1.1.2-8598e505ebbd30583065dcb47740dfad215d1baa.jar" />
     </item>
     <item
         jar="C:\Users\me\workspace\StansBlueNote\app\libs\pixlui.jar"
         jumboMode="false"
         revision="19.1.0"
         sha1="11de4f81afe82f0b3c7f9b11c7539da003fb50f5">
-        <dex dex="C:\Users\me\workspace\StansBlueNote\app\build\intermediates\pre-dexed\release\pixlui-5c7991793b7df900c65b4f32bdee355df4fbbaf2.jar" />
+        <dex dex="C:\Users\me\workspace\StansBlueNote\app\build\intermediates\pre-dexed\debug\pixlui-5c7991793b7df900c65b4f32bdee355df4fbbaf2.jar" />
+    </item>
+    <item
+        jar="C:\Users\me\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="C:\Users\me\workspace\StansBlueNote\app\build\intermediates\pre-dexed\debug\picasso-2.5.2-a8737f8d60f9ff0abb11d51af70c688701b9a2a4.jar" />
+    </item>
+    <item
+        jar="C:\Users\me\workspace\StansBlueNote\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.0\classes.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="4fcf0b1879f8caf497c073e1432d398e9e2988c1">
+        <dex dex="C:\Users\me\workspace\StansBlueNote\app\build\intermediates\pre-dexed\debug\classes-01ca1ef61dec0022dc6b42d0796a0e5c55e2260e.jar" />
     </item>
 
 </items>

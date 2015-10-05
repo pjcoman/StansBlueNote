@@ -1,89 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
-    android:layout_width="wrap_content"
+              android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:clickable="false"
-    android:padding="10dp">
+              android:orientation="horizontal"
+              android:weightSum="2"
+              android:baselineAligned="false">
 
-    <ProgressBar
-        android:id="@+id/progress"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:visibility="invisible"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:padding="20dp">
+
 
     <ImageView
         android:id="@+id/beerimage"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:scaleType="fitXY"
-        android:src="@android:color/black" />
+        android:src="@android:color/black"
+        android:layout_weight="2"
+        />
 
-    <TextView
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:padding="10dp">
+
+
+        <TextView
         android:id="@+id/nameTxt"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
 
         android:gravity="center_horizontal"
         android:textSize="16sp"
         android:textStyle="bold"
         android:text="name of beer"
-        android:visibility="gone" />
+        android:textColor="@color/Blue"/>
 
     <TextView
         android:id="@+id/beertypeTxt"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_toRightOf="@id/beerimage"
         android:gravity="center"
         android:text="type of beer"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:textStyle="bold"
-        android:layout_marginTop="10dp"
         android:textColor="@color/Yellow" />
 
     <TextView
         android:id="@+id/abvTxtlabel"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@id/beertypeTxt"
-        android:layout_toRightOf="@id/beerimage"
         android:text="@string/column3header"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:gravity="center"
         android:textStyle="bold"
         android:textColor="@color/Yellow" />
 
     <TextView
         android:id="@+id/abvTxt"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@id/abvTxtlabel"
-        android:layout_toRightOf="@id/beerimage"
+
         android:gravity="center"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         android:textColor="@color/Yellow" />
 
     <TextView
         android:id="@+id/wherefromTxt"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="false"
-        android:layout_alignParentRight="true"
-        android:textSize="18sp"
+
+        android:textSize="16sp"
         android:text="where from"
-        android:layout_alignParentLeft="false"
-        android:layout_alignParentBottom="false"
-        android:layout_below="@+id/abvTxt"
-        android:layout_toRightOf="@+id/beerimage"
+
         android:gravity="center"
         android:textStyle="bold"
         android:textColor="@color/Yellow" />
 
-</RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>
