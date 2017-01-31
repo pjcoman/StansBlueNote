@@ -2,103 +2,96 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
               android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:clickable="false"
+              android:layout_height="wrap_content"
+              android:clickable="false"
               android:orientation="horizontal"
               android:weightSum="2"
               android:baselineAligned="false"
-              android:padding="20dp">
+              android:paddingLeft="30dp"
+              android:paddingRight="30dp">
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight=".5"
-        android:orientation="horizontal">
-
-
-    <ImageView
-        android:id="@+id/beerimage"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/beericon"
-        />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
 
-        android:layout_weight="1.5"
-        android:gravity="center_vertical|center_horizontal"
-        android:padding="10dp"
-        >
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:padding="10dp">
 
 
-        <TextView
-        android:id="@+id/nameTxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|center_horizontal">
 
-        android:gravity="center_horizontal"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:text="name of beer"
-        android:textColor="@color/Blue"
-        android:paddingLeft="6dp"
-        android:paddingRight="6dp"/>
+            <TextView
+                android:id="@+id/nameTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
-    <TextView
-        android:id="@+id/beertypeTxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="type of beer"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:textColor="@color/Yellow"
-        android:paddingLeft="6dp"
-        android:paddingRight="6dp"/>
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:text="name of beer"
+                android:textColor="#97B3EF"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"/>
 
-    <TextView
-        android:id="@+id/abvTxtlabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/column3header"
-        android:textSize="16sp"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:textColor="@color/Yellow"
-        android:paddingLeft="6dp"
-        android:paddingRight="6dp"/>
+            <TextView
+                android:id="@+id/beertypeTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="type of beer"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/Yellow"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"/>
 
-    <TextView
-        android:id="@+id/abvTxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        </LinearLayout>
 
-        android:gravity="center"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:textColor="@color/Yellow"
-        android:paddingLeft="6dp"
-        android:paddingRight="6dp"/>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|center_horizontal">
 
-    <TextView
-        android:id="@+id/wherefromTxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+            <TextView
+                android:id="@+id/abvTxtlabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/column3header"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/Yellow"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"/>
 
-        android:textSize="16sp"
-        android:text="where from"
+            <TextView
+                android:id="@+id/abvTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
-        android:gravity="center"
-        android:textStyle="bold"
-        android:textColor="@color/Yellow"
-        android:paddingLeft="6dp"
-        android:paddingRight="6dp"/>
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/Yellow"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"/>
+
+            <TextView
+                android:id="@+id/wherefromTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:textSize="16sp"
+                android:text="where from"
+
+                android:textStyle="bold"
+                android:textColor="@color/Yellow"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"/>
+        </LinearLayout>
 
     </LinearLayout>
 

@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="comapps.stansbluenote.app">
 
-
     <supports-screens
         android:anyDensity="true"
         android:largeScreens="true"
@@ -10,7 +9,6 @@
         android:resizeable="true"
         android:smallScreens="true"
         android:xlargeScreens="true" />
-
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -24,117 +22,87 @@
     <uses-permission
         android:name="android.permission.CALL_PHONE"
         android:required="false" />
-
-
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 
-    <!--
-      IMPORTANT: Change "com.parse.starter.permission.C2D_MESSAGE" in the lines below
-      to match your app's package name + ".permission.C2D_MESSAGE".
-    -->
-    <permission android:protectionLevel="signature"
-        android:name="comapps.stansbluenote.app.permission.C2D_MESSAGE" />
+    <permission
+        android:name="comapps.stansbluenote.app.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
 
     <uses-permission android:name="comapps.stansbluenote.app.permission.C2D_MESSAGE" />
 
     <application
-        android:name="ParseApplication"
-
+        android:name=".MyApplication"
         android:allowBackup="true"
-        android:icon="@drawable/bluenoteicon"
-        android:label="Stan\'s Blue Note"
-        android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+        android:icon="@drawable/ic_launcher"
+        android:label="STAN&apos;S BLUE NOTE"
+        android:largeHeap="true"
+        android:theme="@style/Theme.MainActivity">
         <activity android:name=".MainActivity">
+
+            <!-- android:configChanges="orientation|keyboardHidden|screenSize"> -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
         <activity
             android:name=".MainActivityViewPager"
-            android:screenOrientation="unspecified"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
-
-            />
-
-        <activity
-            android:name=".BeerListViewActivity"
-            android:screenOrientation="unspecified"
-
-            />
-
-
-        <activity
-            android:name=".ParseMenuListViewExpandable"
-            android:screenOrientation="unspecified"
-            />
-
-
-        <activity
-            android:name=".SingleItemView"
-            android:screenOrientation="unspecified" />
-
-        <activity
-            android:name=".SpecialsListViewActivity"
-            android:screenOrientation="unspecified"
-
-
-             />
-
-        <activity
-            android:name=".ParseSpecialsListViewPopUp"
-            android:screenOrientation="unspecified"
-
-             />
-
-
-        <activity
-            android:name=".CocktailListViewActivity"
-            android:screenOrientation="unspecified"
-            />
-
-        <activity
-            android:name=".StaffListViewActivity"
             android:screenOrientation="portrait"
-            />
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".login.LoginActivity"
+            android:screenOrientation="unspecified"
+            android:theme="@style/Theme.MainActivity" />
+        <activity
+            android:name=".login.LoginSuccessActivity"
+            android:screenOrientation="unspecified"
+            android:theme="@style/Theme.MainActivity" />
 
+        <activity
+            android:name=".SetDrinkFavorites"
+            android:screenOrientation="unspecified"
+            android:theme="@style/Theme.MainActivity" />
 
-
-        <service android:name="com.parse.PushService" />
-        <receiver android:name="com.parse.ParseBroadcastReceiver">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <action android:name="android.intent.action.USER_PRESENT" />
-            </intent-filter>
-        </receiver>
-        <receiver android:name="com.parse.ParsePushBroadcastReceiver"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="com.parse.push.intent.RECEIVE" />
-                <action android:name="com.parse.push.intent.DELETE" />
-                <action android:name="com.parse.push.intent.OPEN" />
-            </intent-filter>
-        </receiver>
-        <receiver android:name="com.parse.GcmBroadcastReceiver"
+        <receiver
+            android:name="com.backendless.push.BackendlessBroadcastReceiver"
             android:permission="com.google.android.c2dm.permission.SEND">
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
                 <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
 
-
-
                 <category android:name="comapps.stansbluenote.app" />
             </intent-filter>
         </receiver>
 
+        <service android:name="com.backendless.push.BackendlessPushService" />
+        <service android:name="com.backendless.geo.LocationTracker" />
 
+        <receiver android:name="com.backendless.AutoStart">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".MapsActivity"
+            android:label="@string/title_activity_maps"></activity>
     </application>
 
 </manifest>

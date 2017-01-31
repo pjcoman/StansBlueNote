@@ -1,4 +1,4 @@
-apply plugin: 'android'
+apply plugin: 'com.android.application'
 android {
     signingConfigs {
         stansrelease {
@@ -9,14 +9,20 @@ android {
         }
     }
     compileSdkVersion 23
-    buildToolsVersion "19.1.0"
+    buildToolsVersion "23.0.2"
     defaultConfig {
 
-        minSdkVersion 14
+        minSdkVersion 21
         targetSdkVersion 21
-        versionCode 127
-        versionName "12.7"
+        versionCode 300
+        versionName "3.00"
+        multiDexEnabled true
     }
+
+    repositories {
+        jcenter()
+    }
+
     buildTypes {
         release {
 
@@ -26,13 +32,35 @@ android {
     }
     dependencies {
         compile fileTree(dir: 'libs', include: ['*.jar'])
-        compile 'com.parse.bolts:bolts-android:1.1.2'
-        compile fileTree(dir: 'libs', include: 'Parse-*.jar')
-        compile 'uk.co.chrisjenx:calligraphy:2.0.2'
+        compile 'jp.wasabeef:picasso-transformations:2.1.0'
+        compile 'jp.co.cyberagent.android.gpuimage:gpuimage-library:1.4.1'
+        compile 'uk.co.chrisjenx:calligraphy:2.1.0'
+        compile 'net.yanzm:loopviewpager:25.0.1'
         compile 'com.squareup.picasso:picasso:2.5.2'
         compile 'com.android.support:design:23.0.0'
+        compile 'com.android.support:appcompat-v7:23.1.1'
+        compile 'com.android.support:support-v4:23.3.0'
+        compile 'com.android.support:design:23.1.1'
+        compile 'com.android.support:recyclerview-v7:23.1.1'
+        compile 'com.android.support:design:23.1.1'
+        compile 'com.melnykov:floatingactionbutton:1.3.0'
+        compile 'com.google.firebase:firebase-messaging:10.0.1'
+        compile('com.google.android.gms:play-services-location:10.0.1')
+        compile group: 'com.mcxiaoke.volley', name: 'library', version: '1.0.0'
+        compile group: 'com.backendless', name: 'backendless', version: '3.0.24'
+        compile 'com.github.delight-im:Android-SimpleLocation:v1.0.1'
 
 
     }
+
+
+
+
+
+    apply plugin: 'com.google.gms.google-services'
+}
+dependencies {
+    compile 'com.google.android.gms:play-services:10.0.1'
+    compile 'com.android.support:appcompat-v7:23.+'
 }
 

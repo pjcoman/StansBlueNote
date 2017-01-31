@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="White">#FFFFFF</color>
+    <color name="White">#ffffff</color>
     <color name="Ivory">#FFFFF0</color>
     <color name="LightYellow">#FFFFE0</color>
-    <color name="Yellow">#FFFF00</color>
+    <color name="Yellow">#ffff00</color>
 
     <color name="tab_text_pressed">#FFFF00</color>
     <color name="tab_text_focused">#FFFF00</color>
@@ -82,7 +82,7 @@
     <color name="PaleTurquoise">#AFEEEE</color>
     <color name="GreenYellow">#ADFF2F</color>
     <color name="LightBlue">#ADD8E6</color>
-    <color name="DarkGray">#A9A9A9</color>
+    <color name="DarkGray">#a9a9a9</color>
     <color name="Brown">#A52A2A</color>
     <color name="Sienna">#A0522D</color>
     <color name="YellowGreen">#9ACD32</color>
@@ -129,7 +129,7 @@
     <color name="LightSeaGreen">#20B2AA</color>
     <color name="DodgerBlue">#1E90FF</color>
     <color name="MidnightBlue">#191970</color>
-    <color name="Aqua">#00FFFF</color>
+    <color name="Aqua">#97b3ef</color>
     <color name="Cyan">#00FFFF</color>
     <color name="SpringGreen">#00FF7F</color>
     <color name="Lime">#00FF00</color>
@@ -140,7 +140,7 @@
     <color name="Teal">#008080</color>
     <color name="Green">#008000</color>
     <color name="DarkGreen">#006400</color>
-    <color name="Blue">#0000FF</color>
+    <color name="Blue">#0028c8</color>
     <color name="MediumBlue">#0000CD</color>
     <color name="DarkBlue">#00008B</color>
     <color name="Navy">#000080</color>
@@ -148,7 +148,7 @@
     <color name="holo_light_primary">#3f51b5</color>
     <color name="background_holo_light">#f3f3f3</color>
     <color name="bright_foreground_disabled_holo_light">#e13b3b</color>
-    <color name="primary_material_dark">#3f51b5</color>
+    <color name="primary_material_dark">#000000</color>
     <color name="primary_text_default_material_dark">#ffffff</color>
 
 </resources>

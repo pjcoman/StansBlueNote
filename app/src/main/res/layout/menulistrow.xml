@@ -1,40 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:clickable="false"
-                android:paddingBottom="10dp"
-                android:paddingTop="10dp"
-    android:paddingRight="20dp"
-    android:paddingLeft="20dp">
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:clickable="false"
+              android:paddingBottom="10dp"
+              android:paddingTop="10dp"
+              android:paddingRight="20dp"
+              android:paddingLeft="20dp"
+              android:orientation="vertical">
 
     <TextView
         android:id="@+id/itemTxt"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
+
         android:clickable="false"
         android:gravity="center"
         android:paddingLeft="40dp"
         android:paddingRight="40dp"
         android:paddingTop="10dp"
-        android:textColor="@color/Yellow"
+        android:textColor="#97B3EF"
         android:textSize="22sp"
-        />
+        android:text="@string/menuitem"/>
 
     <TextView
         android:id="@+id/priceTxt"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="false"
-        android:layout_alignParentRight="true"
-        android:layout_below="@id/itemTxt"
-        android:layout_centerHorizontal="true"
+
         android:gravity="center"
         android:textColor="@color/Yellow"
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:textStyle="bold|italic"
-        />
+        android:text="@string/menuprice"/>
 
-</RelativeLayout>
+</LinearLayout>

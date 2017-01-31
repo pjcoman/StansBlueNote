@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/beerlistrow_rv"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:clickable="false"
+              android:orientation="horizontal"
+              android:baselineAligned="false"
+              android:gravity="center_vertical|center_horizontal"
+              android:padding="10dp"
+              android:background="@drawable/layout_rounded_corners_blue">
+
+    <ImageView
+        android:id="@+id/beerimage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:src="@drawable/beericon"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical|center_horizontal">
+
+        <TextView
+            android:id="@+id/nameTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:gravity="center_horizontal"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="name of beer"
+            android:textColor="#97B3EF"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"/>
+
+        <TextView
+            android:id="@+id/beertypeTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="type of beer"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/Yellow"
+            android:visibility="visible"/>
+    </LinearLayout>
+
+    <TextView
+    android:id="@+id/abvTxtlabel"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/column3header"
+    android:textSize="16sp"
+    android:gravity="center"
+    android:textStyle="bold"
+    android:textColor="@color/Yellow"
+    android:visibility="gone"/>
+
+    <TextView
+    android:id="@+id/abvTxt"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+
+    android:gravity="center"
+    android:textSize="16sp"
+    android:textStyle="bold"
+    android:textColor="@color/Yellow"
+    android:visibility="gone"/>
+
+    <TextView
+    android:id="@+id/wherefromTxt"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+
+    android:textSize="16sp"
+    android:text="where from"
+
+    android:gravity="center"
+    android:textStyle="bold"
+    android:textColor="@color/Yellow"
+    android:visibility="gone"/>
+
+</LinearLayout>

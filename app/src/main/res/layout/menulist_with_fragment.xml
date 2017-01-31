@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/fragmentstaff"
-        android:name="comapps.stansbluenote.app.MenuListViewFragment"
+        android:name="comapps.stansbluenote.app.food.MenuListFragment"
         tools:layout="@layout/menulist_with_fragment"/>
 
 

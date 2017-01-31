@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.view.PagerTabStrip;
+import android.support.v4.view.PagerTitleStrip;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.text.SpannableStringBuilder;
@@ -23,6 +23,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import comapps.stansbluenote.app.drinks.BeerListFragment;
+import comapps.stansbluenote.app.drinks.CocktailListFragment;
+import comapps.stansbluenote.app.food.MenuListFragment;
+import comapps.stansbluenote.app.people.PeopleListFragment;
+import comapps.stansbluenote.app.people.StaffListFragment;
+import comapps.stansbluenote.app.specials.SpecialsListFragment;
+
+
+
 /**
  * Created by me on 10/2/2015.
  */
@@ -32,19 +41,24 @@ public class MainActivityViewPager extends AppCompatActivity {
     ViewPager viewPager = null;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
+
         setContentView(R.layout.activity_main);
+
+
 
         String idOfSendingActivity = getIntent().getStringExtra("activityId");
 
-        Log.d("Sending activty is", idOfSendingActivity);
+        Log.d("Sending activity is", idOfSendingActivity);
 
         viewPager = (ViewPager) findViewById(R.id.pager);
-        PagerTabStrip pts = (PagerTabStrip) findViewById(R.id.title);
-        pts.setTextSize(TypedValue.COMPLEX_UNIT_SP, 24);
+        PagerTitleStrip pts = (PagerTitleStrip) findViewById(R.id.title);
+        pts.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         viewPager.setAdapter(new MyAdapter(fragmentManager));
@@ -82,6 +96,9 @@ public class MainActivityViewPager extends AppCompatActivity {
                 break;
             case "staff":
                 viewPager.setCurrentItem(4);
+                break;
+            case "people":
+                viewPager.setCurrentItem(5);
                 break;
 
             default:
@@ -169,6 +186,8 @@ public class MainActivityViewPager extends AppCompatActivity {
 
         public MyAdapter(FragmentManager fm) {
             super(fm);
+
+
         }
 
         @Override
@@ -176,23 +195,27 @@ public class MainActivityViewPager extends AppCompatActivity {
             Fragment fragment = null;
             if (position == 0) {
 
-                fragment = new BeerListViewFragment();
+                fragment = new BeerListFragment()  ;
             }
             if (position == 1) {
 
-                fragment = new CocktailListViewFragment();
+                fragment = new CocktailListFragment();
             }
             if (position == 2) {
 
-                fragment = new MenuListViewFragment();
+                fragment = new MenuListFragment();
             }
             if (position == 3) {
 
-                fragment = new SpecialsListViewFragment();
+                fragment = new SpecialsListFragment();
             }
             if (position == 4) {
 
-                fragment = new StaffListViewFragment();
+                fragment = new StaffListFragment();
+            }
+            if (position == 5) {
+
+                fragment = new PeopleListFragment();
             }
 
 
@@ -201,23 +224,25 @@ public class MainActivityViewPager extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            return 5;
+            return 6;
         }
 
 
         @Override
         public CharSequence getPageTitle(int position) {
 
-            String[] tabTitles = {" BEER", " COCKTAILS", " FOOD", " SPECIALS", " STAFF"};
+            String[] tabTitles = {" ON TAP", " DRINKS", " EATS", " SPECIALS   ", " STAFF", " PEOPLE"};
 
 
             if (position == 0) {
 
                 SpannableStringBuilder sb = new SpannableStringBuilder(" " + tabTitles[position]); // space added before text for convenience
-                Drawable drawable = getDrawable(R.drawable.beericon);
-                drawable.setBounds(0, 0, 100, 100);
-                ImageSpan span = new ImageSpan(drawable, ImageSpan.ALIGN_BASELINE);
-                sb.setSpan(span, 0, 1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                if(android.os.Build.VERSION.SDK_INT >= 21) {
+                    Drawable drawable = getDrawable(R.drawable.beericon);
+                    drawable.setBounds(0, 0, 90, 90);
+                    ImageSpan span = new ImageSpan(drawable, ImageSpan.ALIGN_BASELINE);
+                    sb.setSpan(span, 0, 1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                }
 
                 return sb;
 
@@ -225,10 +250,12 @@ public class MainActivityViewPager extends AppCompatActivity {
             if (position == 1) {
 
                 SpannableStringBuilder sb = new SpannableStringBuilder(" " + tabTitles[position]); // space added before text for convenience
-                Drawable drawable = getDrawable(R.drawable.ctailsicon);
-                drawable.setBounds(0, 0, 100, 100);
-                ImageSpan span = new ImageSpan(drawable, ImageSpan.ALIGN_BASELINE);
-                sb.setSpan(span, 0, 1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                if(android.os.Build.VERSION.SDK_INT >= 21) {
+                    Drawable drawable = getDrawable(R.drawable.ctailsicon);
+                    drawable.setBounds(0, 0, 90, 90);
+                    ImageSpan span = new ImageSpan(drawable, ImageSpan.ALIGN_BASELINE);
+                    sb.setSpan(span, 0, 1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                }
 
                 return sb;
 
@@ -236,10 +263,13 @@ public class MainActivityViewPager extends AppCompatActivity {
             if (position == 2) {
 
                 SpannableStringBuilder sb = new SpannableStringBuilder(" " + tabTitles[position]); // space added before text for convenience
-                Drawable drawable = getDrawable(R.drawable.buttonmenu);
-                drawable.setBounds(0, 0, 100, 100);
-                ImageSpan span = new ImageSpan(drawable, ImageSpan.ALIGN_BASELINE);
-                sb.setSpan(span, 0, 1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                if(android.os.Build.VERSION.SDK_INT >= 21) {
+                    Drawable drawable = getDrawable(R.drawable.buttonmenu);
+
+                    drawable.setBounds(0, 0, 90, 90);
+                    ImageSpan span = new ImageSpan(drawable, ImageSpan.ALIGN_BASELINE);
+                    sb.setSpan(span, 0, 1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                }
 
                 return sb;
 
@@ -247,10 +277,12 @@ public class MainActivityViewPager extends AppCompatActivity {
             if (position == 3) {
 
                 SpannableStringBuilder sb = new SpannableStringBuilder(" " + tabTitles[position]); // space added before text for convenience
-                Drawable drawable = getDrawable(R.drawable.specialsicon);
-                drawable.setBounds(0, 0, 100, 100);
-                ImageSpan span = new ImageSpan(drawable, ImageSpan.ALIGN_BASELINE);
-                sb.setSpan(span, 0, 1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                if(android.os.Build.VERSION.SDK_INT >= 21) {
+                    Drawable drawable = getDrawable(R.drawable.specialsicon);
+                    drawable.setBounds(0, 0, 90, 90);
+                    ImageSpan span = new ImageSpan(drawable, ImageSpan.ALIGN_BASELINE);
+                    sb.setSpan(span, 0, 1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                }
 
                 return sb;
 
@@ -258,10 +290,26 @@ public class MainActivityViewPager extends AppCompatActivity {
             if (position == 4) {
 
                 SpannableStringBuilder sb = new SpannableStringBuilder(" " + tabTitles[position]); // space added before text for convenience
-                Drawable drawable = getDrawable(R.drawable.staff_button);
-                drawable.setBounds(0, 0, 100, 100);
-                ImageSpan span = new ImageSpan(drawable, ImageSpan.ALIGN_BASELINE);
-                sb.setSpan(span, 0, 1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                if(android.os.Build.VERSION.SDK_INT >= 21) {
+                    Drawable drawable = getDrawable(R.drawable.staff_button);
+                    drawable.setBounds(0, 0, 90, 90);
+                    ImageSpan span = new ImageSpan(drawable, ImageSpan.ALIGN_BASELINE);
+                    sb.setSpan(span, 0, 1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                }
+
+                return sb;
+
+            }
+
+            if (position == 5) {
+
+                SpannableStringBuilder sb = new SpannableStringBuilder(" " + tabTitles[position]); // space added before text for convenience
+                if(android.os.Build.VERSION.SDK_INT >= 21) {
+                    Drawable drawable = getDrawable(R.drawable.ic_person_blue_24dp);
+                    drawable.setBounds(0, 0, 90, 90);
+                    ImageSpan span = new ImageSpan(drawable, ImageSpan.ALIGN_BASELINE);
+                    sb.setSpan(span, 0, 1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                }
 
                 return sb;
 
@@ -273,6 +321,10 @@ public class MainActivityViewPager extends AppCompatActivity {
 
 
     }
+
+
+
+
 
 
 }

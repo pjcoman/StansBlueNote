@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/fragmentbeer"
-        android:name="comapps.stansbluenote.app.BeerListViewFragment"
+        android:name="comapps.stansbluenote.app.drinks.BeerListFragment"
 
         tools:layout="@layout/beerlist_with_fragment"/>
 

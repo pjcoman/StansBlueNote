@@ -1,0 +1,35 @@
+{
+  "project_info": {
+    "project_number": "74174283334",
+    "project_id": "firebase-stansbluenote"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:74174283334:android:8fcba5afa4fe82fe",
+        "android_client_info": {
+          "package_name": "comapps.stansbluenote.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBD84EyfixTXEddAbApk6uDtMcHmhU2aaU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
