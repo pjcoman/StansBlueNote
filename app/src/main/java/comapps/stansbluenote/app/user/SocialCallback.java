@@ -1,4 +1,4 @@
-package comapps.stansbluenote.app.login;
+package comapps.stansbluenote.app.user;
 
 import android.content.Context;
 import android.widget.Toast;

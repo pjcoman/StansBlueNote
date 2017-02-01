@@ -47,9 +47,9 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import comapps.stansbluenote.app.drinks.BeerRecyclerViewFragment;
-import comapps.stansbluenote.app.login.DefaultCallback;
-import comapps.stansbluenote.app.login.LoginActivity;
+import comapps.stansbluenote.app.user.DefaultCallback;
 import comapps.stansbluenote.app.specials.SpecialsObject;
+import comapps.stansbluenote.app.user.LoginActivity;
 import im.delight.android.location.SimpleLocation;
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
@@ -73,6 +73,7 @@ GoogleApiClient.OnConnectionFailedListener, LocationListener {
     String user_Id = null;
     String device_Id = null;
     String favDrinksString = null;
+    String leaderBoardString;
     GeoPoint geoPoint;
     GeoPoint geoPointStans = new GeoPoint(32.824054, -96.7697702);
 
@@ -649,6 +650,38 @@ GoogleApiClient.OnConnectionFailedListener, LocationListener {
                 Log.i(TAG, "formatteddate " + formattedDate);
 
 
+                leaderBoardString = sharedPrefs.getString("leaderBoard", "0000000");
+                Log.i(TAG, "leaderBoardString " + leaderBoardString);
+
+               
+
+                char[] leaderBoardChars = leaderBoardString.toCharArray();
+
+                if ( sharedPrefs.getString("leaderBoardMonth", String.valueOf(Calendar.MONTH)).equals(String.valueOf(Calendar.MONTH))) {
+
+                    leaderBoardChars[getCurrentDay() - 1] = '1';
+                    leaderBoardString = String.valueOf(leaderBoardChars);
+                    Log.i(TAG, "leaderBoardString " + leaderBoardString);
+
+
+                } else {
+
+                    char[] leaderBoardCharsNew = {0, 0, 0, 0, 0, 0, 0};
+                    leaderBoardCharsNew[getCurrentDay() - 1] = '1';
+                    leaderBoardString = String.valueOf(leaderBoardCharsNew);
+                    Log.i(TAG, "leaderBoardString " + leaderBoardString);
+
+                    editor.putString("leaderBoard", leaderBoardString);
+                    editor.putString("leaderBoardMonth", String.valueOf(Calendar.MONTH));
+                    editor.apply();
+
+
+                }
+
+
+
+
+
 
 
 
@@ -670,43 +703,10 @@ GoogleApiClient.OnConnectionFailedListener, LocationListener {
                         try {
                             response.setProperty("location", geoPoint);
                             response.setProperty("deviceID", device_Id);
+                            response.setProperty("leaderboard", leaderBoardString);
                         //    response.setProperty("visits", sharedPrefs.getInt("visits", 0));
                         //    visitstv.setText(Integer.toString(sharedPrefs.getInt("visits", 0)));
 
-                            String leaderBoardString = (String) response.getProperty("leaderboard");
-
-                            Log.i(TAG, "leaderBoardString " + leaderBoardString);
-
-                            if ( leaderBoardString == null) {
-                                leaderBoardString = "0000000";
-
-                                Log.i(TAG, "leaderBoardString " + leaderBoardString);
-
-
-                            }
-
-                            char[] leaderBoardChars = leaderBoardString.toCharArray();
-
-                            if ( sharedPrefs.getString("leaderBoardMonth", String.valueOf(Calendar.MONTH)).equals(String.valueOf(Calendar.MONTH))) {
-
-                                leaderBoardChars[getCurrentDay() - 1] = '1';
-                                leaderBoardString = String.valueOf(leaderBoardChars);
-                                Log.i(TAG, "leaderBoardString " + leaderBoardString);
-                                response.setProperty("leaderboard", leaderBoardString);
-
-                            } else {
-
-                                char[] leaderBoardCharsNew = {0, 0, 0, 0, 0, 0, 0};
-                                leaderBoardCharsNew[getCurrentDay() - 1] = '1';
-                                leaderBoardString = String.valueOf(leaderBoardCharsNew);
-                                Log.i(TAG, "leaderBoardString " + leaderBoardString);
-                                response.setProperty("leaderboard", leaderBoardString);
-
-                                editor.putString("leaderBoardMonth", String.valueOf(Calendar.MONTH));
-                                editor.apply();
-
-
-                            }
 
 
 
@@ -789,6 +789,8 @@ GoogleApiClient.OnConnectionFailedListener, LocationListener {
                         response.setProperty("location", geoPoint);
                         response.setProperty("deviceID", device_Id);
                         response = Backendless.UserService.update(response);
+
+                        leaderBoardString = (String) response.getProperty("leaderboard");
 
 
                     } catch (BackendlessException e) {

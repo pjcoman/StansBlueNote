@@ -121,10 +121,20 @@ class PeopleListAdapter extends BaseAdapter {
         Log.i(TAG, "favs " + favorites);
         Log.i(TAG, "leaderboard " + leaderBoardString);
 
+
+
         Date dateUpdated = (Date) user.getProperty("updated");
+
+        if ( dateUpdated == null ) {
+            dateUpdated = new Date(System.currentTimeMillis());
+        }
+
+        Log.i(TAG, "dateUpdated " + dateUpdated.toString());
+
+
         Date currentDateMinus2Hours = new Date(System.currentTimeMillis() - 1000*60*60*2);
 
-        Calendar updatedDay = DateToCalendar((Date) user.getProperty("updated"));
+        Calendar updatedDay = DateToCalendar(dateUpdated);
         Calendar today = Calendar.getInstance();
 
         long diff = today.getTimeInMillis() - updatedDay.getTimeInMillis();
@@ -175,19 +185,7 @@ class PeopleListAdapter extends BaseAdapter {
             }
 
 
-            if ( favorites != null && favorites != "" ) {
-
-                favorites = favorites.replaceAll("item", "");
-                favorites = favorites.replaceAll(",,", ",");
-
-
-                if ( LastChar(favorites) == ',' ) {
-                    favorites = favorites.substring(0,favorites.length() - 1);
-                }
-
-                if ( FirstChar(favorites) == ',' ) {
-                    favorites = favorites.substring(1);
-                }
+            if ( favorites != null ) {
 
                 holder.favsTV.setText(favorites);
 
@@ -229,7 +227,7 @@ class PeopleListAdapter extends BaseAdapter {
         try {
             DateFormat formatter = new SimpleDateFormat("yyyyMMdd");
             try {
-                date = (Date)formatter.parse(date.toString());
+                date = formatter.parse(date.toString());
             } catch (java.text.ParseException e) {
                 e.printStackTrace();
             }

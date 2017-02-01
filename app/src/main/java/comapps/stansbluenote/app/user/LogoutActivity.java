@@ -1,4 +1,4 @@
-package comapps.stansbluenote.app.login;
+package comapps.stansbluenote.app.user;
 
 /**
  * Created by me on 12/28/2016.

@@ -1,38 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical"
-    android:paddingLeft="@dimen/dp16"
-    android:paddingRight="@dimen/dp16">
-
-
-                                    
-        <Button
-            android:id="@+id/loginFacebookButton"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dp48"
-            android:layout_marginBottom="@dimen/dp4"
-            android:height="@dimen/dp40"
-            android:background="@drawable/btn_facebook_bg"
-            android:text="@string/facebook_button_text"/>
-                                    
-        <Button
-            android:id="@+id/loginTwitterButton"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dp48"
-            android:layout_marginTop="@dimen/dp4"
-            android:height="@dimen/dp40"
-            android:background="@drawable/btn_twitter_bg"
-            android:text="@string/twitter_button_text"/>
-                                    
-
-
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="wrap_content"
+    android:gravity="top">
+    <TextView
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="right" />
+        android:text="@string/service_name"
+        android:textSize="@dimen/bit_text" android:layout_marginTop="@dimen/default_margin"
+        android:gravity="center_horizontal"
+        android:textColor="#97B3EF" />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/service_type"
+        android:textSize="@dimen/bit_text" android:layout_marginBottom="@dimen/default_margin"
+        android:gravity="center_horizontal"
+        android:textColor="#97B3EF" />
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" android:gravity="center_horizontal"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email address:"
+                android:paddingRight="@dimen/small_padding" android:textSize="@dimen/normal_text"
+                android:textColor="#97B3EF" />
+            <EditText
+                android:layout_width="@dimen/edittext_width"
+                android:layout_height="wrap_content"
+                android:id="@+id/emailField" android:textSize="@dimen/normal_text"
+                android:inputType="textEmailAddress"
+                android:textColor="#97B3EF" />
+        </TableRow>
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" android:gravity="center_horizontal"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Password:"
+                android:paddingRight="@dimen/small_padding" android:textSize="@dimen/normal_text"
+                android:textColor="#97B3EF" />
+            <EditText
+                android:layout_width="@dimen/edittext_width"
+                android:layout_height="wrap_content"
+                android:id="@+id/passwordField" android:textSize="@dimen/normal_text"
+                android:inputType="textPassword"
+                android:textColor="#97B3EF" />
+        </TableRow>
+    </TableLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" android:layout_marginTop="@dimen/small_padding"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/button_height"
+            android:text="Login"
+            android:id="@+id/loginButton" android:textSize="@dimen/normal_text"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="or"
+            android:textSize="@dimen/normal_text"
+            android:layout_marginLeft="@dimen/small_padding" android:layout_marginRight="@dimen/small_padding"
+            android:textColor="#97B3EF" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/button_height"
+            android:text="Register"
+            android:id="@+id/registerButton" android:textSize="@dimen/normal_text"/>
+    </LinearLayout>
 </LinearLayout>

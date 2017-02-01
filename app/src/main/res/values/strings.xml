@@ -119,5 +119,9 @@
     <string name="password_field_prompt">Password:</string>
     <string name="default_registered_text">Registered successfully!</string>
     <string name="registration_success_message">Thank you for registering with the %1$s. Click the button below to proceed to the login.</string>
+    <string name="service_name">Stan\'s Blue Note</string>
+    <string name="service_type">User Service</string>
+    <string name="loggedIn_text">You are now successfully logged in.\nThis concludes the example. Use the button below to logout.</string>
+    <string name="registered_text">Thank you for registering!\nYou can use your email to login.</string>
 
 </resources>

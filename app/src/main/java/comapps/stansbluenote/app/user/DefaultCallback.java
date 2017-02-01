@@ -1,29 +1,20 @@
-package comapps.stansbluenote.app.login;
+package comapps.stansbluenote.app.user;
 
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.widget.Toast;
-
 import com.backendless.async.callback.BackendlessCallback;
 import com.backendless.exceptions.BackendlessFault;
 
-
-
 public class DefaultCallback<T> extends BackendlessCallback<T>
 {
-  private Context context;
-  private ProgressDialog progressDialog;
+  Context context;
+  ProgressDialog progressDialog;
 
   public DefaultCallback( Context context )
   {
     this.context = context;
-    progressDialog = ProgressDialog.show( context, "", "Loading...", true );
-  }
-
-  public DefaultCallback( Context context, String message )
-  {
-    this.context = context;
-    progressDialog = ProgressDialog.show( context, "", "Logging in...", true );
+    progressDialog = ProgressDialog.show( context, "", "Loading", true );
   }
 
   @Override
@@ -32,10 +23,11 @@ public class DefaultCallback<T> extends BackendlessCallback<T>
     progressDialog.cancel();
   }
 
+  //This override is optional
   @Override
   public void handleFault( BackendlessFault fault )
   {
     progressDialog.cancel();
-    Toast.makeText( context, fault.getMessage(), Toast.LENGTH_LONG ).show();
+    Toast.makeText( context, fault.getMessage(), Toast.LENGTH_SHORT ).show();
   }
 }

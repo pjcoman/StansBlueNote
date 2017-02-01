@@ -1,4 +1,4 @@
-package comapps.stansbluenote.app.login;
+package comapps.stansbluenote.app.user;
 
 public class Defaults
 {

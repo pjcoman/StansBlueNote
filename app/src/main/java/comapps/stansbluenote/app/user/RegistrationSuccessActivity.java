@@ -1,4 +1,4 @@
-package comapps.stansbluenote.app.login;
+package comapps.stansbluenote.app.user;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -10,7 +10,6 @@ import android.widget.TextView;
 
 import comapps.stansbluenote.app.R;
 
-
 public class RegistrationSuccessActivity extends Activity
 {
   private TextView messageView;
@@ -20,7 +19,7 @@ public class RegistrationSuccessActivity extends Activity
   public void onCreate( Bundle savedInstanceState )
   {
     super.onCreate( savedInstanceState );
-    setContentView(R.layout.registration_success );
+    setContentView( R.layout.registration_success );
 
     initUI();
   }

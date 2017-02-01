@@ -55,11 +55,35 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".login.LoginActivity"
+            android:name=".user.LoginSuccessActivity"
             android:screenOrientation="unspecified"
             android:theme="@style/Theme.MainActivity" />
         <activity
-            android:name=".login.LoginSuccessActivity"
+            android:name=".user.LoginActivity"
+            android:screenOrientation="unspecified"
+            android:theme="@style/Theme.MainActivity" />
+        <activity
+            android:name=".user.RegistrationSuccessActivity"
+            android:screenOrientation="unspecified"
+            android:theme="@style/Theme.MainActivity" />
+
+        <activity
+            android:name=".user.RegisterActivity"
+            android:screenOrientation="unspecified"
+            android:theme="@style/Theme.MainActivity" />
+
+        <activity
+            android:name=".user.RegisteredActivity"
+            android:screenOrientation="unspecified"
+            android:theme="@style/Theme.MainActivity" />
+
+        <activity
+            android:name=".user.PasswordRecoveryRequestedActivity"
+            android:screenOrientation="unspecified"
+            android:theme="@style/Theme.MainActivity" />
+
+        <activity
+            android:name=".user.RestorePasswordActivity"
             android:screenOrientation="unspecified"
             android:theme="@style/Theme.MainActivity" />
 

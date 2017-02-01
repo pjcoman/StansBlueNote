@@ -1,4 +1,4 @@
-package comapps.stansbluenote.app.login;
+package comapps.stansbluenote.app.user;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -19,7 +19,7 @@ public class RestorePasswordActivity extends Activity
   public void onCreate( Bundle savedInstanceState )
   {
     super.onCreate( savedInstanceState );
-    setContentView(R.layout.restore_password);
+    setContentView( R.layout.restore_password );
 
     initUI();
   }

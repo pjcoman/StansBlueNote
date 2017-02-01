@@ -1,4 +1,4 @@
-package comapps.stansbluenote.app.login;
+package comapps.stansbluenote.app.user;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -12,7 +12,6 @@ import com.backendless.exceptions.BackendlessFault;
 import comapps.stansbluenote.app.R;
 
 
-
 public class LoginSuccessActivity extends Activity
 {
   private Button logoutButton;
@@ -20,7 +19,7 @@ public class LoginSuccessActivity extends Activity
   public void onCreate( Bundle savedInstanceState )
   {
     super.onCreate( savedInstanceState );
-    setContentView( R.layout.login_success );
+    setContentView(R.layout.login_success );
 
     initUI();
   }
